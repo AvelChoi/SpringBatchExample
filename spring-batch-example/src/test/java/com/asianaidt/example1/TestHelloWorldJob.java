@@ -13,15 +13,15 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/com/asianaidt/example1/hello_world_job.xml")
 public class TestHelloWorldJob {
-	
+
 	@Autowired
 	private JobLauncherTestUtils jobLauncherTestUtils;
-	
+
 	@Test
 	public void testJob() throws Exception {
 		final JobExecution jobExecution = jobLauncherTestUtils.launchJob();
 		Assert.assertEquals(ExitStatus.COMPLETED.getExitCode(), jobExecution.getExitStatus().getExitCode());
 
 	}
-	
+
 }
